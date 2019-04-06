@@ -1,8 +1,58 @@
-body {
-  color: blue;
-  background-color: green;
-}
+@charset 'UTF-8';
 
-::placeholder {
-  color: red;
-}
+/*! Didor scss | MIT License | github.com/fvena/didorscss */
+
+/**
+ * ARQUITECTURA Y METODOLOGÍA
+ *
+ * DIDOR SCSS sigue la una estrucutura de archivos basada en la metodología ITCSS
+ * (Inverted Triangle CSS), y para la nomenclatura usa BEM.
+ *
+ * La metodología ITCSS, se basa en dividir todo el CSS en capas formando un
+ * triangulo invertido. Esta estructura ayuda a ordenar el CSS de forma efectiva,
+ * al desarrollo modular y evitar los problemas de especificidad.
+ *
+ * Cada capa se agrupa dentro de un directorio:
+ *
+ * Settings   - Configuración y variables globales,
+ * Tools      - Funciones y mixins Sass.
+ * Base       - Inicia y normaliza los valores por defecto de los navegadores,
+ *            - Da un estilo base a los elementos HTML de forma general, sin clases.
+ * Components - Diseño y desarrollo de componentes para la interfaz
+ * Helpers    - Clases con estilos comunes y útiles que agilizan el desarrollo de UI.
+ */
+
+/**
+ * MODULAR
+ *
+ * DIDOR SCSS se ha desarrollado de forma modular, cada módulo corresponde con una
+ * de las capas utilizadas anteriormete.
+ *
+ * Esto implica que puedes utilizar solo algunos módulos, por ejemplo:
+ *
+ * Tools
+ * Tools + Base
+ * Tools + Base + Helpers
+ * Tools + Components
+ * ...
+ *
+ * Como puedes ver, y a la vez es lógico, todos los módulos necesitan el módulo tools
+ */
+
+/**
+ * IMPORTAR SETTINGS DESDE TOOLS
+ *
+ * He decidido importar la configuración global (settings) desde las herramientas (tools),
+ * el motivo es que todos los módulos dependen de esta configuración, y a su vez todos dependen
+ * de las herramientas.
+ *
+ * De esta forma se simplifica la instalación del framework teniendo que importar un módulo menos,
+ * y evito errores, al evitar que un usuario no quiera importarlo, pensando que quiere utilizar su
+ * propia configuración.
+ */
+
+// @import 'settings';
+@import 'tools';
+@import 'base';
+@import 'components';
+@import 'helpers';

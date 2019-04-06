@@ -1,0 +1,103 @@
+/**
+ * SETTINGS
+ *
+ * En esta capa se definen las variables y opciones de configuración globales,
+ * es importante tener en cuenta que son globales: fuentes, tamaños de fuentes,
+ * paletas de colores, espacios, breakpoints... El objetivo es que sean simples
+ * y fáciles de mantener.
+ *
+ * Las opciones específicas del tipo $headline-background-color,
+ * $headline-height, $input-color deben ir en sus correspondientes archivos,
+ * de esta forma estos serán más modulares, y los ajustes globales son más
+ * faciles de mantener.
+ */
+
+/**
+ * FONTS
+ */
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+// @import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
+
+$content-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
+$content-font-light: lighter;
+$content-font-normal: normal;
+$content-font-bold: bold;
+
+$heading-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
+$heading-font-normal: bold;
+
+$code-font-family: 'Fira Code', 'Courier New', Courier, monospace;
+$code-font-slim: lighter; // 300, 400
+$code-font-normal: normal; // 300, 400
+$code-font-bold: bold; // 500, 700
+
+$base-line-height: 1.6;
+$modular-scale: 1.175;
+
+$root-sizes: (
+  palm: 18,
+  lap: 18,
+  desk: 18,
+  large: 18,
+) !default;
+
+/**
+ * SPACE AND LAYOUT SETTINGS
+ */
+$grid-columns: 12;
+$container-width: 64rem;
+
+$space: $base-line-height * 1rem;
+
+/**
+ * STYLE SETTINGS
+ */
+$border-radius: 5px !default;
+
+/**
+ * Z-INDEX OF LAYERS
+ */
+$layer-negative-z-index: -1;
+$layer-page-z-index: 1;
+$layer-aside-z-index: 5;
+$layer-header-z-index: 5;
+$layer-dropdown-z-index: 10;
+$layer-modal-z-index: 15;
+$layer-popover-z-index: 20;
+$layer-tooltip-z-index: 25;
+
+/**
+ * ANIMATION SETTINGS
+ */
+$duration-animation-base: 300ms;
+$transition-bounce: cubic-bezier(0.25, 1.43, 0.35, 1.69);
+
+/**
+ * RESPONSIVE SETTINGS
+ */
+
+/**
+ * Breakpoints
+ * Valor en em del tamaño máximo de pantalla
+ *
+ * Existen 5 tamaños de pantalla definidos:
+ *   palm  - Móviles                                  (0 - 600px)
+ *   lap   - Tablet verticales y Móviles horizontales (601px - 900px)
+ *   small - Tablet horizontales                      (901px - 1200px)
+ *   desk  - Portátiles y monitores pequeños          (1201px - 1600px)
+ *   large - Monitores grandes                        (1601px - ...)
+ */
+$palm: px2em(600px); // ~37.5em
+$lap: px2em(900px); // ~56.25em
+$small: px2em(1200px); // ~75em
+$desk: px2em(1600px); // ~100em
+
+/**
+ * Mobile First
+ *
+ * Indica si se trata de un diseño siguiendo el enfoque Mobile First
+ */
+$mobile-first: false;
+
+$responsive: true;
+$breakpoints: 'palm', 'lap', 'small', 'desk', 'large';
