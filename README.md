@@ -124,6 +124,12 @@ Puedes ir a la sección release de nuestro proyecto en GitHub o mirar el archivo
 
 Este proyecto es y será siempre de código abierto. Eres bienvenido si quieres contribuir a su desarrollo y mejorarlo cada vez más. Para ello, tienes varias posibilidades:
 
+- [Remitiendo errores](https://github.com/fvena/didor-scss/blob/master/CONTRIBUTE.md#remitiendo-errores)
+- [Añadiendo nueva funcionalidad](https://github.com/fvena/didor-scss/blob/master/CONTRIBUTE.md#a%C3%B1adiendo-nueva-funcionalidad)
+- [Compartiendo en redes sociales](https://github.com/fvena/didor-scss/blob/master/CONTRIBUTE.md#compartiendo-en-redes-sociales-%EF%B8%8F)
+- [Conviértiendote en un colaborador oficial](https://github.com/fvena/didor-scss/blob/master/CONTRIBUTE.md#convi%C3%A9rtiendote-en-un-colaborador-oficial)
+- [Haciendo una pequeña donación](https://github.com/fvena/didor-scss/blob/master/CONTRIBUTE.md#haciendo-una-peque%C3%B1a-donaci%C3%B3n)
+
 
 ## Licencia
 

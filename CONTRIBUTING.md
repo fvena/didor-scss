@@ -33,8 +33,10 @@ Solucionar errores es la mejor forma de comenzar a contribuir en un proyecto de 
 3. Crea una rama y nombrala `issue/{issueId}`
 4. Soluciona el error
 5. Realiza test
+
   5.1. Ejecuta los test actuales y comprueba que todo lo demás sigue funcionando
   5.2. Añade nuevos test para garantizar que la solución siga funcionando a lo largo del tiempo
+
 6. Realiza un pull-request, y trata de explicar brevemente como has solucionado el problema.
 7. Espera hasta que recibas una contestación.
 
@@ -52,8 +54,10 @@ Añadir nuevas funcionalidades es otra gran manera de contribuir a un proyecto. 
 4. Crear una rama llamada `feature/{issueId}`
 5. Desarrolla la nueva funcionalidad
 6. Realiza test de la nueva funcionalidad
+
   6.1. Ejecuta los test actuales y comprueba que todo lo demás sigue funcionando
   6.2. Añade nuevos test para garantizar que la nueva funcionalidad siga funcionando a lo largo del tiempo
+
 7. Documenta la nueva funcionalidad, para que otros puedan utilizarla.
 8. Realiza un pull-request.
 9. Espera hasta que recibas una contestación.
@@ -64,6 +68,7 @@ Lo que más me gustaría es que quisieras ayudarme a mantener y impulsar Didor h
 
 1. Contribuye al proyecto al menos un par de veces
 2. Envíame un email a fvena32@gmail.com, y dedica algunas lineas a:
+
   2.1 Explicar porque te gustaría participar en el proyecto
   2.2 Tu nombre de usuario en Github
   2.3 Cualquier otra cosa que consideres oportuna
