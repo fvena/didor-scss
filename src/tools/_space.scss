@@ -1,0 +1,5 @@
+@function space($size: 1) {
+  $space: var(--line-height-base);
+
+  @return calc(1rem * #{$space} * $size);
+}

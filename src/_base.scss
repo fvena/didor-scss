@@ -17,4 +17,6 @@
  * estilo. Se configuran inicialmente en el proyecto, y no suelen modificarse
  * posteriormente.
  */
-// @import 'base/page';
+@import 'base/roots';
+@import 'base/page';
+@import 'base/type';

@@ -1,0 +1,19 @@
+:root {
+  //
+  // Colores
+  // ========================================================================
+  @include rootColors();
+
+  //
+  // Tipografía
+  // ========================================================================
+  --modular-scale: #{$modular-scale};
+
+  @include rootFontSizes();
+  @include rootLineHeights();
+
+  //
+  // Ritmo vertical y espacios
+  // ========================================================================
+  --space: #{$space};
+}

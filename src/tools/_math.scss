@@ -1,0 +1,41 @@
+//
+// Name:         Math
+// Descripción:  Contiene utilidades para calculos matemáticos
+//
+// ========================================================================
+
+/// Devuelve un rem en píxeles.
+///
+/// body {
+///   @include rootsize;
+/// }
+/// ========================================================================
+@function rem2px($value) {
+  @return $value / 16px * 1rem;
+}
+
+@function px2em($value) {
+  @return $value / 16px * 1em;
+}
+
+/**
+ * Devuelve el valor 'x' elevado a 'y'. Ejemplo de uso.
+ *
+ * pow(2,2) = 2*2     // 4
+ * pow(2,3) = 2*2*2   // 8
+ */
+@function pow($x, $y) {
+  $ret: 1;
+
+  @if $y > 0 {
+    @for $i from 1 through $y {
+      $ret: $ret * $x;
+    }
+  } @else if $y < 0 {
+    @for $i from $y to 0 {
+      $ret: $ret / $x;
+    }
+  }
+
+  @return ceil($ret * 100) / 100;
+}

@@ -5,15 +5,6 @@
 // ========================================================================
 
 //
-// Genera variables css con los colores definidos
-// ========================================================================
-:root {
-  @each $name, $color in $color-map {
-    --color-#{$name}: #{hue($color)}, #{saturation($color)}, #{lightness($color)};
-  }
-}
-
-//
 // Genera clases para seleccionar el color del texto y del fondo con cada color definido
 // ========================================================================
 @each $name, $color in $color-map {

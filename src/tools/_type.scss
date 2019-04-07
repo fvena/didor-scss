@@ -1,0 +1,133 @@
+//
+// Nombre:        Type
+// Descripción:  Contiene utilidades para el manejo de la tipografía
+//
+// ========================================================================
+
+/// Genera los tamaños de fuente por defecto en %, por cada breakpoint.
+///
+/// body {
+///   @include rootsize;
+/// }
+/// ========================================================================
+
+@mixin rootsize {
+  $base-breakpoints: desk;
+
+  // Compruebo si es mobile first
+  @if ($mobile-first) {
+    $base-breakpoints: palm;
+  }
+
+  // Si existe tiene el breakpoint base
+  @if map-has-key($root-sizes, $base-breakpoints) {
+    font-size: #{map-get($root-sizes, $base-breakpoints) / 16 * 100%};
+  }
+
+  // Recorre todos los breakpoint.
+  @each $breakpoint, $size in $root-sizes {
+    @if $breakpoint != $base-breakpoints {
+      @include media($breakpoint) {
+        font-size: #{$size / 16 * 100%};
+      }
+    }
+  }
+}
+
+/// Devuelve el tamaño de la fuente en base al valor de la escala pasado
+///
+/// h1 {
+///   font-size: font-size(alpha);
+/// }
+///
+/// @param {Integer} $level - Nombre del nivel de escala
+/// @return {String} - Valor en rem del nivel
+/// ========================================================================
+
+@function font-size($level) {
+  $size: var(--modular-scale);
+
+  @if ($level > 0) {
+    @for $i from 1 to $level {
+      $size: #{$size} * var(--modular-scale);
+    }
+  } @else {
+    @for $i from $level to 0 {
+      $size: #{$size} / var(--modular-scale);
+    }
+  }
+
+  @return calc(1rem * #{$size});
+}
+
+@mixin rootFontSizes() {
+  @for $i from 1 to ($heading-levels + 1) {
+    $module: pow($modular-scale, $heading-levels - $i + 2);
+
+    --font-size-h#{$i}: #{$module}rem;
+  }
+
+  @for $i from ($heading-levels + 1) to 7 {
+    --font-size-h#{$i}: 1rem;
+  }
+
+  --font-size-base: 1rem;
+
+  @for $i from 1 to ($small-levels + 1) {
+    $module: pow($modular-scale, -$i - 1);
+
+    --font-size-small#{$i}: #{$module}rem;
+  }
+}
+
+@mixin rootLineHeights() {
+  @for $i from 1 to ($heading-levels + 1) {
+    $module: pow($modular-scale, $heading-levels - $i + 2);
+
+    --line-height-h#{$i}: #{ceil($module / $line-height-base) * $line-height-base}rem;
+  }
+
+  @for $i from ($heading-levels + 1) to 7 {
+    --line-height-h#{$i}: #{$line-height-base}rem;
+  }
+
+  --line-height-base: #{$line-height-base}rem;
+
+  @for $i from 1 to ($small-levels + 1) {
+    $module: pow($modular-scale, -$i - 1);
+
+    --line-height-small#{$i}: #{ceil($module / $line-height-base) * $line-height-base}rem;
+  }
+}
+
+// @mixin rootFontValues($name, $level) {
+//   $module: pow($modular-scale, $level);
+
+//   --font-size-#{$name}: #{$module}rem;
+//   --line-height-#{$name}: #{ceil(($module * 1) / $line-height-base) * ($line-height-base / 1)}rem;
+// }
+
+/// Devuelve la altura de línea en base al valor de la escala pasado
+///
+/// h1 {
+///   line-height: line-height(alpha)
+/// }
+///
+/// @param {String} $level - Nombre del nivel de escala
+/// @return {String} - Valor en rem del nivel
+/// ========================================================================
+
+/// Cuando un texto no cabe en una sola linea,
+/// oculta la parte que no se vé y muestra tres puntos
+///
+/// .title {
+///   @include text-ellipsis;
+/// }
+/// ========================================================================
+
+// Text Ellipsis
+@mixin text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
