@@ -1,0 +1,69 @@
+//
+// Mixin:        Colors
+// Descripción:  Contiene utilidades para el manejo de los colores
+//
+// ========================================================================
+
+///
+/// Junta todos los mapas de colores en uno solo
+/// ========================================================================
+
+$color-map: map-merge(map-merge($color-brand-map, $color-gray-map), $color-notify-map);
+
+/// Devuelve un color como variable css.
+/// Por defecto, sino se especifica, devuelve el color `brand`.
+///
+/// body {
+///   color: color();
+///   color: color(brand);
+/// }
+///
+/// @param {String} $color-name - Nombre del color
+/// @return {String} - Variable css con el color indicado
+/// ========================================================================
+
+@function color($color-name: brand) {
+  @return unquote('hsl(var(--color-#{$color-name}))');
+}
+
+/// Devuelve un color con el valor de opacidad definido
+///
+/// body {
+///   color: color-alpha(brand,0.6);
+///   color: color-alpha(danger,0.8);
+/// }
+///
+/// @param {String} $color-name - Nombre del color
+/// @param {Number} $alpha - Nombre del color
+/// @return {String} - Variable css con el color indicado
+/// ========================================================================
+
+@function color-alpha($color-name: 'brand', $alpha: 0) {
+  @return unquote('hsla(var(--color-#{$color-name}), #{$alpha})');
+}
+
+/// Devuelve un degradado con los colores y dirección definidos
+///
+/// body {
+///   color: gradient(brand-lighter, brand-darker, vertical);
+///   color: gradient(danger-lighter, danger-darker, radial);
+/// }
+///
+/// @param {String} $start-color - Nombre del color inicial
+/// @param {String} $end-color - Nombre del color final
+/// @param {String} $direction - Dirección del degradado
+/// ========================================================================
+
+@mixin gradient($start-color, $end-color, $direction) {
+  background: color($start-color);
+
+  @if $direction == 'vertical' {
+    background: linear-gradient(to bottom, color($start-color), color($end-color));
+  } @else if $direction == 'horizontal' {
+    background: linear-gradient(to right, color($start-color), color($end-color));
+  } @else if $direction == 'diagonal' {
+    background: radial-gradient(ellipse at top left, color($start-color), color($end-color));
+  } @else {
+    background: radial-gradient(ellipse at center, color($start-color), color($end-color));
+  }
+}
