@@ -4,16 +4,24 @@
 //
 // ========================================================================
 
-/// Devuelve un rem en píxeles.
+/// Convierte un valor en pixeles en rem.
 ///
-/// body {
-///   @include rootsize;
-/// }
+/// px2rem(200px)
+///
+/// @param {String} $value - Valor en pixeles
+/// @return {String} - Valor en rem
 /// ========================================================================
-@function rem2px($value) {
+@function px2rem($value) {
   @return $value / 16px * 1rem;
 }
 
+/// Convierte un valor en pixeles en em.
+///
+/// px2em(200px)
+///
+/// @param {String} $value - Valor en pixeles
+/// @return {String} - Valor en em
+/// ========================================================================
 @function px2em($value) {
   @return $value / 16px * 1em;
 }
@@ -24,6 +32,11 @@
  * pow(2,2) = 2*2     // 4
  * pow(2,3) = 2*2*2   // 8
  */
+/// Devuelve el valor de un número elevado a otro.
+///
+/// pow(2,2) = 2*2     // 4
+/// pow(2,3) = 2*2*2   // 8
+/// ========================================================================
 @function pow($x, $y) {
   $ret: 1;
 

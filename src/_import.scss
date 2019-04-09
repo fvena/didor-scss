@@ -1,0 +1,81 @@
+//
+// Parámetros configurables del framework
+//
+// ========================================================================
+
+//
+// Colores
+// ========================================================================
+$color-brand-map: (
+  brand-darker: hsl(190, 90%, 25%),
+  brand-dark: hsl(190, 70%, 35%),
+  brand: hsl(190, 65%, 45%),
+  brand-light: hsl(190, 65%, 65%),
+  brand-lighter: hsl(190, 60%, 85%)
+) !default;
+
+$color-gray-map: (
+  gray1: hsl(196, 25%, 12%),
+  gray2: hsl(198, 17%, 28%),
+  gray3: hsl(200, 5%, 46%),
+  gray4: hsl(198, 7%, 64%),
+  gray5: hsl(202, 13%, 83%),
+  gray6: hsl(206, 17%, 92%),
+  gray7: hsl(220, 18%, 97%),
+  gray8: hsl(0, 0%, 100%)
+) !default;
+
+$color-notify-map: (
+  warning-darker: hsl(39, 100%, 35%),
+  warning-dark: hsl(41, 100%, 45%),
+  warning: hsl(41, 100%, 60%),
+  warning-light: hsl(41, 100%, 75%),
+  warning-lighter: hsl(41, 100%, 90%),
+  success-darker: hsl(94, 80%, 30%),
+  success-dark: hsl(94, 67%, 41%),
+  success: hsl(94, 52%, 50%),
+  success-light: hsl(94, 66%, 70%),
+  success-lighter: hsl(94, 70%, 90%),
+  danger-darker: hsl(6, 100%, 30%),
+  danger-dark: hsl(6, 100%, 45%),
+  danger: hsl(6, 100%, 60%),
+  danger-light: hsl(6, 100%, 75%),
+  danger-lighter: hsl(6, 100%, 90%)
+) !default;
+
+//
+// Semantic color
+//
+$color-content: map-get($color-gray-map, gray2);
+$color-heading: map-get($color-gray-map, gray1);
+$color-background: map-get($color-gray-map, gray8);
+$color-link: map-get($color-brand-map, brand);
+$color-link-hover: map-get($color-brand-map, brand-darker);
+$color-border: map-get($color-gray-map, gray6);
+$color-shadow: map-get($color-gray-map, gray1);
+
+//
+// Tipografía
+// ========================================================================
+$root-sizes: (
+  palm: 14,
+  lap: 15,
+  small: 16,
+  desk: 17,
+  large: 18
+) !default;
+
+$modular-scale: 1.125 !default;
+$line-height-base: 1.6 !default;
+$heading-levels: 6 !default;
+$small-levels: 3 !default;
+
+//
+// Responsive
+// ========================================================================
+$mobile-first: false !default;
+
+$palm: 600px !default;
+$lap: 900px !default;
+$small: 1200px !default;
+$desk: 1600px !default;

@@ -37,14 +37,14 @@
 /// Devuelve el tamaño de la fuente en base al valor de la escala pasado
 ///
 /// h1 {
-///   font-size: font-size(alpha);
+///   font-size: size(6);
 /// }
 ///
 /// @param {Integer} $level - Nombre del nivel de escala
 /// @return {String} - Valor en rem del nivel
 /// ========================================================================
 
-@function font-size($level) {
+@function size($level) {
   $size: var(--modular-scale);
 
   @if ($level > 0) {
@@ -59,6 +59,11 @@
 
   @return calc(1rem * #{$size});
 }
+
+/// Genera variables css con los tamaños de fuente definidos
+///
+/// @include rootFontSizes();
+/// ========================================================================
 
 @mixin rootFontSizes() {
   @for $i from 1 to ($heading-levels + 1) {
@@ -80,6 +85,11 @@
   }
 }
 
+/// Genera variables css con las alturas de línea correspondientes al tamaño de fuente definidos
+///
+/// @include rootLineHeights();
+/// ========================================================================
+
 @mixin rootLineHeights() {
   @for $i from 1 to ($heading-levels + 1) {
     $module: pow($modular-scale, $heading-levels - $i + 2);
@@ -100,23 +110,6 @@
   }
 }
 
-// @mixin rootFontValues($name, $level) {
-//   $module: pow($modular-scale, $level);
-
-//   --font-size-#{$name}: #{$module}rem;
-//   --line-height-#{$name}: #{ceil(($module * 1) / $line-height-base) * ($line-height-base / 1)}rem;
-// }
-
-/// Devuelve la altura de línea en base al valor de la escala pasado
-///
-/// h1 {
-///   line-height: line-height(alpha)
-/// }
-///
-/// @param {String} $level - Nombre del nivel de escala
-/// @return {String} - Valor en rem del nivel
-/// ========================================================================
-
 /// Cuando un texto no cabe en una sola linea,
 /// oculta la parte que no se vé y muestra tres puntos
 ///
@@ -125,7 +118,6 @@
 /// }
 /// ========================================================================
 
-// Text Ellipsis
 @mixin text-ellipsis() {
   overflow: hidden;
   text-overflow: ellipsis;

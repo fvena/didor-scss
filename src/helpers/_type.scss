@@ -1,80 +1,100 @@
-@for $i from 1 to ($heading-levels + 1) {
-  .font-size-h#{$i} {
-    font-size: var(--font-size-h#{$i});
-  }
-}
+//
+// Helper:       Type
+// Descripción:  Genera clases de ayuda con las propiedades tipográficas
+//
+// ========================================================================
 
-.font-size-base {
-  font-size: var(--font-size-base);
-}
-
-@for $i from 1 to ($small-levels + 1) {
-  .font-size-small#{$i} {
-    font-size: var(--font-size-small#{$i});
-  }
-}
-
-// Text
-// Text alignment utilities
-.text-left {
+//
+// Clases para manejar la alineación del texto
+// ========================================================================
+.text--left {
   text-align: left;
 }
 
-.text-right {
+.text--right {
   text-align: right;
 }
 
-.text-center {
+.text--center {
   text-align: center;
 }
 
-.text-justify {
+.text--justify {
   text-align: justify;
 }
 
-// Text transform utilities
-.text-lowercase {
+//
+// Clases para transformar el texto
+// ========================================================================
+.text--lowercase {
   text-transform: lowercase;
 }
 
-.text-uppercase {
+.text--uppercase {
   text-transform: uppercase;
 }
 
-.text-capitalize {
+.text--capitalize {
   text-transform: capitalize;
 }
 
-// Text style utilities
-.text-normal {
+//
+// Clases para manejar el estilo del texto
+// ========================================================================
+.text--normal {
   font-weight: normal;
 }
 
-.text-bold {
+.text--bold {
   font-weight: bold;
 }
 
-.text-italic {
+.text--italic {
   font-style: italic;
 }
 
-.text-large {
+.text--large {
   font-size: 1.2em;
 }
 
-// Text overflow utilities
-.text-ellipsis {
+//
+// Clases para manejar el desbordamiento del texto
+// ========================================================================
+.text--ellipsis {
   @include text-ellipsis();
 }
 
-.text-clip {
+.text--clip {
   overflow: hidden;
   text-overflow: clip;
   white-space: nowrap;
 }
 
-.text-break {
+.text--break {
   hyphens: auto;
   word-break: break-word;
   word-wrap: break-word;
+}
+
+//
+// Genera clases con los diferentes tamaños de fuente predefinidos
+//
+// <div class="size--h1">Hola Mundo</div>
+// <div class="size--base">Hola Mundo</div>
+// <div class="size--small2">Hola Mundo</div>
+// ========================================================================
+@for $i from 1 to ($heading-levels + 1) {
+  .size--h#{$i} {
+    font-size: var(--font-size-h#{$i});
+  }
+}
+
+.size--base {
+  font-size: var(--font-size-base);
+}
+
+@for $i from 1 to ($small-levels + 1) {
+  .size--small#{$i} {
+    font-size: var(--font-size-small#{$i});
+  }
 }

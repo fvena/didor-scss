@@ -42,7 +42,19 @@ $color-map: map-merge(map-merge($color-brand-map, $color-gray-map), $color-notif
   @return unquote('hsla(var(--color-#{$color-name}), #{$alpha})');
 }
 
-/// Devuelve un degradado con los colores y dirección definidos
+//
+// Genera variables css con los colores definidos
+//
+// @include rootColors();
+// ========================================================================
+
+@mixin rootColors() {
+  @each $name, $color in $color-map {
+    --color-#{$name}: #{hue($color)}, #{saturation($color)}, #{lightness($color)};
+  }
+}
+
+/// Genera un degradado con los colores y dirección definidos
 ///
 /// body {
 ///   color: gradient(brand-lighter, brand-darker, vertical);
@@ -65,11 +77,5 @@ $color-map: map-merge(map-merge($color-brand-map, $color-gray-map), $color-notif
     background: radial-gradient(ellipse at top left, color($start-color), color($end-color));
   } @else {
     background: radial-gradient(ellipse at center, color($start-color), color($end-color));
-  }
-}
-
-@mixin rootColors() {
-  @each $name, $color in $color-map {
-    --color-#{$name}: #{hue($color)}, #{saturation($color)}, #{lightness($color)};
   }
 }

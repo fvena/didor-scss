@@ -8,10 +8,10 @@
 // Genera clases para seleccionar el color del texto y del fondo con cada color definido
 // ========================================================================
 @each $name, $color in $color-map {
-  .color-#{$name} {
+  .color--#{$name} {
     color: color($name) !important;
   }
-  .background-#{$name} {
+  .background--#{$name} {
     background-color: color($name) !important;
   }
 }

@@ -1,9 +1,19 @@
-/**
- * HELPERS
- *
- * The helpers, or “override” layer, should contain high-specificity selectors.
- * These are things like utility classes such as .hide which may use a rule like
- * display:none !important.
- */
+//
+// Módulo:       Helpers
+// Descripción:  Contiene clases con funcionalidad específica para facilitar
+//               y aumentar la velocidad de desarrollo
+//
+// ========================================================================
+
+//
+// Helpers
+//
+// The helpers, or “override” layer, should contain high-specificity selectors.
+// These are things like utility classes such as .hide which may use a rule like
+// display:none !important.
+// ========================================================================
+
 @import 'helpers/colors';
+@import 'helpers/spaces';
 @import 'helpers/type';
+@import 'helpers/visibility';

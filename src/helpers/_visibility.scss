@@ -1,0 +1,54 @@
+//
+// Helper:       Visibility
+// Descripción:  Genera clases de ayuda para mostrar y ocultar elementos
+//
+// ========================================================================
+
+//
+// Clases para diferentes tipos de visualización
+// ========================================================================
+
+.hidden {
+  display: none !important;
+}
+
+.visible,
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.inline {
+  display: inline !important;
+}
+
+//
+// Genera clases helpers que muestran/ocultan elementos de forma responsive
+//
+// <p class="hidden palm--block">
+// <p class="palm--hidden">
+// ========================================================================
+
+@each $breakpoint, $size in $breakpoints-desk-first {
+  @include media($breakpoint) {
+    .hidden--#{$breakpoint} {
+      display: none !important;
+    }
+
+    .block--#{$breakpoint},
+    .visible--#{$breakpoint} {
+      display: block !important;
+    }
+
+    .inline-block--#{$breakpoint} {
+      display: inline-block !important;
+    }
+
+    .inline--#{$breakpoint} {
+      display: inline !important;
+    }
+  }
+}

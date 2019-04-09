@@ -1,0 +1,20 @@
+//
+// Name:         Spaces
+// Descripción:  Contiene utilidades para manejar los espacios de forma proporcional
+//
+// ========================================================================
+
+/// Devuelve un tamaño proporcional al espaciado definido por defecto.
+///
+/// .foo {
+///    margin: space(2);
+///    width: space 10;
+///    height: space 6;
+/// }
+///
+/// @param {String} $size - Tamaño
+/// @return {String} - Tamaño proporcional al espaciado por defecto
+/// ========================================================================
+@function space($size: 1) {
+  @return calc(var(--space) * #{$size});
+}

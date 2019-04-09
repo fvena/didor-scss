@@ -1,12 +1,13 @@
-/**
- * UTILITIES
- *
- * Funciones Sass.
- * Mixins Sass.
- */
+//
+// Módulo:       Tools
+// Descripción:  Funciones y Mixins Sass
+//
+// ========================================================================
+
 @import 'settings';
 @import 'tools/math';
 @import 'tools/colors';
-@import 'tools/space';
+@import 'tools/spaces';
 @import 'tools/type';
 @import 'tools/responsive';
+@import 'tools/shadows';

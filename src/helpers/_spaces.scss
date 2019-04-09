@@ -1,0 +1,79 @@
+//
+// Helper:       Spaces
+// Descripción:  Genera clases de ayuda para manejar los espacios
+//
+// ========================================================================
+
+//
+// Genera clases para manejar el padding y el margin
+//
+// <div class="margin">Hola mundo</div>
+// <div class="padding-top">Hola mundo</div>
+// <div class="no-margin-bottom">Hola mundo</div>
+// <div class="padding--triple">Hola mundo</div>
+// <div class="margin-left--double">Hola mundo</div>
+// ========================================================================
+
+@each $attr in margin, padding {
+  .#{$attr} {
+    #{$attr}: var(--space) !important;
+  }
+
+  .#{$attr}-top {
+    #{$attr}-top: var(--space) !important;
+  }
+
+  .#{$attr}-right {
+    #{$attr}-right: var(--space) !important;
+  }
+
+  .#{$attr}-bottom {
+    #{$attr}-bottom: var(--space) !important;
+  }
+
+  .#{$attr}-left {
+    #{$attr}-left: var(--space) !important;
+  }
+
+  .no-#{$attr} {
+    #{$attr}: 0 !important;
+  }
+
+  .no-#{$attr}-top {
+    #{$attr}-top: 0 !important;
+  }
+
+  .no-#{$attr}-right {
+    #{$attr}-right: 0 !important;
+  }
+
+  .no-#{$attr}-bottom {
+    #{$attr}-bottom: 0 !important;
+  }
+
+  .no-#{$attr}-left {
+    #{$attr}-left: 0 !important;
+  }
+
+  @each $name, $size in $space-map {
+    .#{$attr}--#{$name} {
+      #{$attr}: space($size) !important;
+    }
+
+    .#{$attr}-top--#{$name} {
+      #{$attr}-top: space($size) !important;
+    }
+
+    .#{$attr}-right--#{$name} {
+      #{$attr}-right: space($size) !important;
+    }
+
+    .#{$attr}-bottom--#{$name} {
+      #{$attr}-bottom: space($size) !important;
+    }
+
+    .#{$attr}-left--#{$name} {
+      #{$attr}-left: space($size) !important;
+    }
+  }
+}
